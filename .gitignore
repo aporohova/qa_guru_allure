@@ -6,6 +6,6 @@
 /gradlew
 /gradlew.bat
 /.gitignore
-/.idea/
 /gradle/
 build/
+.idea/
