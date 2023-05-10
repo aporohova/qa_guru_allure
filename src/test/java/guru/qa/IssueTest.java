@@ -1,11 +1,9 @@
 package guru.qa;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -24,9 +22,8 @@ public class IssueTest extends TestBase{
     @Test
     @DisplayName("Listener Test")
     public void testWithListener () {
-        SelenideLogger.addListener("allure", new AllureSelenide());
 
-        open("https://github.com");
+        open("/");
         $(".header-search-input").click();
         $(".header-search-input").sendKeys(REPOSITORY);
         $(".header-search-input").submit();
@@ -40,9 +37,8 @@ public class IssueTest extends TestBase{
     @DisplayName("Lambda Test")
 
     public void testWithLambda () {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         step("Открываем главную страницу github", () -> {
-                open("https://github.com");
+                open("/");
     });
         step("Ищем репозиторий" + REPOSITORY, () -> {
             $(".header-search-input").click();

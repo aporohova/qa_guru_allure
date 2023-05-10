@@ -12,7 +12,7 @@ public class Steps {
 
     @Step ("Открываем главную страницу github")
     public void openMainPage(){
-        open("https://github.com");
+        open("/");
 
     }
 
